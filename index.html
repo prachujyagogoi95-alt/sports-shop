@@ -1,0 +1,1089 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SPORTZONE | Local Sports Store</title>
+<meta name="description" content="Your local sports shop for cricket, football, badminton and fitness equipment. Enquire and order through WhatsApp.">
+
+<style>
+:root {
+    --dark: #101d17;
+    --green: #c6ff55;
+    --light: #f5f6f1;
+    --grey: #777;
+    --white: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--light);
+    color: var(--dark);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    background: var(--dark);
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.logo span, footer span {
+    color: var(--green);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+nav a:hover {
+    color: var(--green);
+}
+
+.nav-btn {
+    background: var(--green);
+    color: var(--dark);
+    padding: 12px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.hero {
+    min-height: 530px;
+    padding: 80px 8%;
+    display: flex;
+    align-items: center;
+    color: white;
+    background:
+    linear-gradient(90deg, #101d17 10%, #101d1780),
+    url("https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1600")
+    center/cover;
+}
+
+.hero-content {
+    max-width: 620px;
+}
+
+.tagline {
+    color: #78a72c;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 7vw, 75px);
+    line-height: 1.05;
+    margin: 18px 0;
+}
+
+.hero h1 span {
+    color: var(--green);
+}
+
+.hero p {
+    color: #ddd;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    font-size: 17px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 22px;
+    background: var(--green);
+    color: var(--dark);
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+section {
+    padding: 75px 7%;
+}
+
+.section-heading {
+    margin-bottom: 30px;
+}
+
+.section-heading h2 {
+    font-size: 35px;
+    margin: 12px 0;
+}
+
+.section-heading p:last-child {
+    color: var(--grey);
+    line-height: 1.6;
+}
+
+.search-box {
+    width: 100%;
+    max-width: 450px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    margin-bottom: 25px;
+    font-size: 15px;
+    outline: none;
+}
+
+.search-box:focus {
+    border-color: #8bbd37;
+}
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.category-btn {
+    padding: 11px 20px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.category-btn.active,
+.category-btn:hover {
+    background: var(--dark);
+    color: white;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px #0000000c;
+    transition: .3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    background: #eee;
+}
+
+.product-info {
+    padding: 18px;
+}
+
+.product-info small {
+    color: var(--grey);
+}
+
+.product-info h3 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.price {
+    color: #25843e;
+    font-size: 21px;
+    font-weight: bold;
+    margin: 12px 0;
+}
+
+.product-actions {
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.product-actions button,
+.product-actions a {
+    flex: 1;
+    min-width: 65px;
+    text-align: center;
+    padding: 11px 7px;
+    border-radius: 6px;
+    border: none;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.details-btn {
+    background: #eee;
+    color: var(--dark);
+}
+
+.whatsapp-btn {
+    background: #20c767;
+    color: white;
+    padding: 12px;
+    border-radius: 6px;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+}
+
+.buy-btn {
+    background: var(--green);
+    color: var(--dark);
+    padding: 12px;
+    border-radius: 6px;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+}
+
+.why-us {
+    background: var(--dark);
+    color: white;
+}
+
+.why-us .section-heading h2 {
+    color: white;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.feature {
+    background: #1b2b22;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.feature h3 {
+    color: var(--green);
+    margin-bottom: 12px;
+}
+
+.feature p {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.about h2 {
+    font-size: 36px;
+    margin: 15px 0;
+}
+
+.about p {
+    color: var(--grey);
+    line-height: 1.8;
+    margin: 15px 0;
+}
+
+.about img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.contact {
+    background: #e9eee4;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.contact-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.contact-card h3 {
+    margin-bottom: 12px;
+}
+
+.contact-card p {
+    color: var(--grey);
+    line-height: 1.7;
+}
+
+.map {
+    width: 100%;
+    height: 350px;
+    border: none;
+    border-radius: 12px;
+    margin-top: 30px;
+}
+
+footer {
+    background: var(--dark);
+    color: white;
+    text-align: center;
+    padding: 35px;
+    line-height: 2;
+}
+
+.floating-whatsapp {
+    position: fixed;
+    bottom: 22px;
+    right: 22px;
+    z-index: 200;
+    background: #20c767;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 40px;
+    font-weight: bold;
+    box-shadow: 0 5px 20px #0003;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 300;
+    background: #000b;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-content {
+    position: relative;
+    background: white;
+    padding: 25px;
+    width: 100%;
+    max-width: 450px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 12px;
+}
+
+.modal-content img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.modal-content h2 {
+    margin: 10px 0;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 18px;
+    background: white;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.modal-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.empty {
+    color: var(--grey);
+    padding: 30px;
+    grid-column: 1/-1;
+}
+
+@media(max-width:700px) {
+    header {
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 15px 5%;
+    }
+
+    nav {
+        width: 100%;
+        overflow-x: auto;
+        gap: 17px;
+        font-size: 13px;
+    }
+
+    .hero {
+        min-height: 430px;
+        padding: 60px 7%;
+    }
+
+    section {
+        padding: 50px 6%;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .product-card img {
+        height: 145px;
+    }
+
+    .product-info {
+        padding: 12px;
+    }
+
+    .product-info h3 {
+        font-size: 15px;
+    }
+
+    .product-actions {
+        flex-direction: column;
+    }
+
+    .product-actions button,
+    .product-actions a {
+        width: 100%;
+    }
+
+    .section-heading h2 {
+        font-size: 29px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+    <a href="#home" class="logo">SPORT<span>ZONE.</span></a>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#" id="headerWhatsApp" class="nav-btn">WhatsApp Us</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+
+<div class="hero" id="home">
+    <div class="hero-content">
+        <p class="tagline">YOUR LOCAL SPORTS DESTINATION</p>
+
+        <h1>GEAR UP.<br><span>PLAY HARD.</span></h1>
+
+        <p>
+            Everything you need to play your best game.
+            Explore quality sports equipment at competitive prices.
+        </p>
+
+        <a href="#products" class="btn">EXPLORE PRODUCTS →</a>
+    </div>
+</div>
+
+<!-- PRODUCTS -->
+
+<section id="products">
+
+    <div class="section-heading">
+        <p class="tagline">OUR COLLECTION</p>
+        <h2>Explore Products.</h2>
+        <p>Find your equipment and order directly through WhatsApp.</p>
+    </div>
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search products..."
+        class="search-box"
+    >
+
+    <div class="categories" id="categories"></div>
+
+    <div class="product-grid" id="productGrid"></div>
+
+</section>
+
+<!-- WHY CHOOSE US -->
+
+<section class="why-us">
+
+    <div class="section-heading">
+        <p class="tagline">WHY SPORTZONE</p>
+        <h2>Made for Sports Lovers.</h2>
+    </div>
+
+    <div class="features">
+
+        <div class="feature">
+            <h3>🏆 Quality Products</h3>
+            <p>Equipment for beginners and professional players.</p>
+        </div>
+
+        <div class="feature">
+            <h3>💰 Competitive Prices</h3>
+            <p>Explore our collection and enquire about prices.</p>
+        </div>
+
+        <div class="feature">
+            <h3>📱 Easy Ordering</h3>
+            <p>Place purchase requests directly through WhatsApp.</p>
+        </div>
+
+        <div class="feature">
+            <h3>📍 Local Store</h3>
+            <p>Visit us and experience personal customer service.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about" class="about">
+
+    <div>
+        <p class="tagline">ABOUT US</p>
+        <h2>Your Game. Your Equipment. Your Store.</h2>
+
+        <p>
+            Welcome to SPORTZONE, your local destination for
+            sports equipment. We offer cricket, football,
+            badminton and fitness products for sports lovers.
+        </p>
+
+        <p>
+            Browse our catalogue, check out our products
+            and contact our team directly for enquiries.
+        </p>
+
+        <br>
+
+        <a href="#contact" class="btn">VISIT OUR STORE</a>
+    </div>
+
+    <img
+        src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=900"
+        alt="Sports and athletics"
+        loading="lazy"
+    >
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
+
+    <div class="section-heading">
+        <p class="tagline">GET IN TOUCH</p>
+        <h2>Visit Our Store.</h2>
+        <p>We would love to hear from you.</p>
+    </div>
+
+    <div class="contact-grid">
+
+        <div class="contact-card">
+            <h3>📍 Address</h3>
+            <p id="shopAddress"></p>
+        </div>
+
+        <div class="contact-card">
+            <h3>📞 Phone</h3>
+            <p id="shopPhone"></p>
+        </div>
+
+        <div class="contact-card">
+            <h3>🕒 Opening Hours</h3>
+            <p id="shopHours"></p>
+        </div>
+
+        <div class="contact-card">
+            <h3>📱 Instagram</h3>
+            <a id="instagramLink" target="_blank">Follow Us</a>
+        </div>
+
+    </div>
+
+    <iframe
+        id="mapFrame"
+        class="map"
+        loading="lazy"
+        title="Shop location">
+    </iframe>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+    <h2>SPORT<span>ZONE.</span></h2>
+    <p>Your local sports destination.</p>
+    <p>© 2026 SPORTZONE. All rights reserved.</p>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+
+<a href="#" id="floatingWhatsApp" class="floating-whatsapp">
+    WhatsApp Us
+</a>
+
+<!-- PRODUCT DETAILS POPUP -->
+
+<div class="modal" id="productModal">
+
+    <div class="modal-content">
+
+        <button class="close" onclick="closeModal()">×</button>
+
+        <img id="modalImage" src="" alt="Product">
+
+        <p id="modalCategory" class="tagline"></p>
+
+        <h2 id="modalName"></h2>
+
+        <h3 id="modalPrice" class="price"></h3>
+
+        <p id="modalDescription"></p>
+
+        <div class="modal-actions">
+
+            <a id="modalWhatsApp" class="whatsapp-btn" target="_blank">
+                Enquire on WhatsApp
+            </a>
+
+            <a id="modalBuy" class="buy-btn" target="_blank">
+                Buy Now
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+// ========================================
+// 1. SHOP DETAILS - EDIT THESE
+// ========================================
+
+const shop = {
+
+    name: "SPORTZONE",
+
+    // Enter WhatsApp number with country code 91
+    // Do not add +, spaces or dashes
+
+    whatsapp: "919876543210",
+
+    phone: "+91 9876543210",
+
+    address: "Your Shop Address, Silchar, Assam",
+
+    hours: "Monday - Saturday, 9 AM - 8 PM",
+
+    instagram: "https://instagram.com/",
+
+    map: "Silchar, Assam"
+
+};
+
+
+// ========================================
+// 2. PRODUCT DATABASE
+// ADD YOUR PRODUCTS HERE
+// ========================================
+
+const products = [
+
+    {
+        id: 1,
+        name: "Professional Cricket Bat",
+        category: "Cricket",
+        price: 2499,
+        image: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=700",
+        description: "Quality cricket bat for practice and matches."
+    },
+
+    {
+        id: 2,
+        name: "Cricket Ball",
+        category: "Cricket",
+        price: 350,
+        image: "https://images.unsplash.com/photo-1624880357913-a8539238245b?w=700",
+        description: "Durable cricket ball for training and matches."
+    },
+
+    {
+        id: 3,
+        name: "Football",
+        category: "Football",
+        price: 999,
+        image: "https://images.unsplash.com/photo-1614632537190-23e4b4d4f6b5?w=700",
+        description: "Quality football for outdoor practice."
+    },
+
+    {
+        id: 4,
+        name: "Football Shoes",
+        category: "Football",
+        price: 1799,
+        image: "https://images.unsplash.com/photo-1511886929837-354d827aae26?w=700",
+        description: "Comfortable football shoes with good grip."
+    },
+
+    {
+        id: 5,
+        name: "Badminton Racket",
+        category: "Badminton",
+        price: 1299,
+        image: "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=700",
+        description: "Lightweight badminton racket for players."
+    },
+
+    {
+        id: 6,
+        name: "Running Shoes",
+        category: "Fitness",
+        price: 1999,
+        image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=700",
+        description: "Comfortable shoes for running and exercise."
+    },
+
+    {
+        id: 7,
+        name: "Gym Dumbbells",
+        category: "Fitness",
+        price: 799,
+        image: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=700",
+        description: "Dumbbells for home workouts."
+    },
+
+    {
+        id: 8,
+        name: "Sports Water Bottle",
+        category: "Accessories",
+        price: 299,
+        image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=700",
+        description: "Reusable sports water bottle."
+    }
+
+];
+
+
+// ========================================
+// 3. WHATSAPP LINK GENERATOR
+// ========================================
+
+function whatsappURL(message) {
+
+    return "https://wa.me/" +
+        shop.whatsapp +
+        "?text=" +
+        encodeURIComponent(message);
+
+}
+
+
+// ========================================
+// 4. CATEGORY FILTERS
+// ========================================
+
+const categoryList = [
+    "All",
+    "Cricket",
+    "Football",
+    "Badminton",
+    "Fitness",
+    "Accessories"
+];
+
+let activeCategory = "All";
+
+function displayCategories() {
+
+    const container = document.getElementById("categories");
+
+    container.innerHTML = categoryList.map(category => `
+
+        <button
+            class="category-btn ${activeCategory === category ? "active" : ""}"
+            onclick="filterCategory('${category}')">
+
+            ${category}
+
+        </button>
+
+    `).join("");
+
+}
+
+
+// ========================================
+// 5. DISPLAY PRODUCTS
+// ========================================
+
+function displayProducts() {
+
+    const grid = document.getElementById("productGrid");
+
+    const search = document
+        .getElementById("searchInput")
+        .value.toLowerCase();
+
+    const filteredProducts = products.filter(product => {
+
+        const categoryMatch =
+            activeCategory === "All" ||
+            product.category === activeCategory;
+
+        const searchMatch =
+            product.name.toLowerCase().includes(search) ||
+            product.category.toLowerCase().includes(search);
+
+        return categoryMatch && searchMatch;
+
+    });
+
+    if (filteredProducts.length === 0) {
+
+        grid.innerHTML =
+            '<p class="empty">No products found.</p>';
+
+        return;
+
+    }
+
+    grid.innerHTML = filteredProducts.map(product => `
+
+        <div class="product-card">
+
+            <img
+                src="${product.image}"
+                alt="${product.name}"
+                loading="lazy"
+                onerror="this.src='https://placehold.co/600x400?text=Image+Not+Found'">
+
+            <div class="product-info">
+
+                <small>${product.category}</small>
+
+                <h3>${product.name}</h3>
+
+                <div class="price">
+                    ₹${Number(product.price).toLocaleString("en-IN")}
+                </div>
+
+                <div class="product-actions">
+
+                    <button
+                        class="details-btn"
+                        onclick="showDetails(${product.id})">
+                        Details
+                    </button>
+
+                    <a
+                        class="whatsapp-btn"
+                        href="${whatsappURL(
+                            `Hello! I want to enquire about ${product.name}. Is it available?`
+                        )}"
+                        target="_blank"
+                        rel="noopener">
+                        Enquire
+                    </a>
+
+                    <a
+                        class="buy-btn"
+                        href="${whatsappURL(
+                            `Hello! I want to purchase:\n\nProduct: ${product.name}\nPrice: ₹${product.price}\nQuantity: 1\n\nPlease confirm availability and ordering details.`
+                        )}"
+                        target="_blank"
+                        rel="noopener">
+                        Buy Now
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    `).join("");
+
+}
+
+
+// ========================================
+// 6. CATEGORY FILTER
+// ========================================
+
+function filterCategory(category) {
+
+    activeCategory = category;
+
+    displayCategories();
+
+    displayProducts();
+
+}
+
+
+// ========================================
+// 7. SEARCH
+// ========================================
+
+document
+    .getElementById("searchInput")
+    .addEventListener("input", displayProducts);
+
+
+// ========================================
+// 8. PRODUCT DETAILS POPUP
+// ========================================
+
+function showDetails(id) {
+
+    const product = products.find(p => p.id === id);
+
+    if (!product) return;
+
+    document.getElementById("modalImage").src =
+        product.image;
+
+    document.getElementById("modalName").innerText =
+        product.name;
+
+    document.getElementById("modalCategory").innerText =
+        product.category;
+
+    document.getElementById("modalPrice").innerText =
+        "₹" + Number(product.price).toLocaleString("en-IN");
+
+    document.getElementById("modalDescription").innerText =
+        product.description;
+
+    document.getElementById("modalWhatsApp").href =
+        whatsappURL(
+            `Hello! I want to enquire about ${product.name}.`
+        );
+
+    document.getElementById("modalBuy").href =
+        whatsappURL(
+            `Hello! I want to purchase:\n\nProduct: ${product.name}\nPrice: ₹${product.price}\nQuantity: 1\n\nPlease confirm availability and ordering details.`
+        );
+
+    document.getElementById("productModal").style.display = "flex";
+
+}
+
+
+function closeModal() {
+
+    document.getElementById("productModal").style.display = "none";
+
+}
+
+
+// Close modal when clicking outside
+
+document.getElementById("productModal").addEventListener(
+    "click",
+    function(event) {
+
+        if (event.target === this) {
+            closeModal();
+        }
+
+    }
+);
+
+
+// ========================================
+// 9. SHOP INFORMATION
+// ========================================
+
+document.getElementById("shopAddress").innerText =
+    shop.address;
+
+document.getElementById("shopPhone").innerText =
+    shop.phone;
+
+document.getElementById("shopHours").innerText =
+    shop.hours;
+
+document.getElementById("instagramLink").href =
+    shop.instagram;
+
+document.getElementById("mapFrame").src =
+    "https://www.google.com/maps?q=" +
+    encodeURIComponent(shop.map) +
+    "&output=embed";
+
+document.getElementById("headerWhatsApp").href =
+    whatsappURL("Hello! I want to know more about your sports shop.");
+
+document.getElementById("floatingWhatsApp").href =
+    whatsappURL("Hello! I want to enquire about your products.");
+
+
+// ========================================
+// 10. INITIALIZE WEBSITE
+// ========================================
+
+displayCategories();
+
+displayProducts();
+
+</script>
+
+</body>
+</html>
